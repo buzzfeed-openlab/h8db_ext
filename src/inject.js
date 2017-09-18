@@ -51,9 +51,9 @@ chrome.extension.sendMessage({}, function(response) {
           var span = document.createElement('span');
           span.className = 'h8db-term';
           span.textContent = match;
-          span.style.backgroundColor = 'red';
+          span.style.backgroundColor = 'rgba(255,0,0,0.3)';
           span.dataset.h8db_term = term;
-          span.dataset.h8db_definition = obj.explanation;
+          span.dataset.h8db_definition = obj.description;
           return span;
         });
       })
@@ -64,10 +64,13 @@ chrome.extension.sendMessage({}, function(response) {
       popover.style.position = 'fixed';
       popover.style.zIndex = 10000;
       popover.style.display = 'none';
-      popover.style.fontFamily = 'monospace';
+      popover.style.fontFamily = 'Helvetica, sans-serif';
       popover.style.backgroundColor = '#fff';
       popover.style.boxShadow = '2px 2px 2px rgba(0,0,0,0.2)';
-      popover.style.padding = '0.1em 0.2em';
+      popover.style.padding = '1em';
+      popover.style.maxWidth = '360px';
+      popover.style.fontSize = '15px';
+      popover.style.lineHeight = '1.3';
       document.body.appendChild(popover);
       document.addEventListener('mousemove', function(ev) {
         popover.style.top = (ev.clientY + offset) + 'px';
@@ -80,7 +83,7 @@ chrome.extension.sendMessage({}, function(response) {
         termEls[i].addEventListener('mouseenter', function(ev) {
           clearTimeout(popover.timer);
           popover.style.display = 'block';
-          popover.textContent = ev.target.dataset.h8db_definition;
+          popover.innerHTML = ev.target.dataset.h8db_definition;
         });
         termEls[i].addEventListener('mouseleave', function(ev) {
           popover.timer = setTimeout(function() {

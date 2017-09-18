@@ -1,6 +1,6 @@
 var terms = [];
-const SPREADSHEET_ID = '1e5bokjIu438y4DIaP_nrvtcrjE3zysUeRt7DHwtZlqw';
-const FIELDS = ['term', 'type', 'url', 'kind', 'explanation', 'origin', 'alias', 'relationships'];
+const SPREADSHEET_ID = '1BQwdvEIyJHJt2xn3jH8MZ2qYhR3UrhnpTGI0-3hvX8w';
+const FIELDS = ['term', 'description', 'image'];
 
 function parseRow(row) {
   // parse a GSX (Google Spreadsheet)
@@ -55,7 +55,7 @@ sheet.load(SPREADSHEET_ID, 1, rows => {
     });
     terms.push(term);
   });
-  //console.log(terms); // DEBUG
+  // console.log(terms); // DEBUG
 });
 
 chrome.runtime.onMessage.addListener(
