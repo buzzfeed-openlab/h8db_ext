@@ -1,6 +1,9 @@
 var terms = [];
-const SPREADSHEET_ID = '1BQwdvEIyJHJt2xn3jH8MZ2qYhR3UrhnpTGI0-3hvX8w';
-const FIELDS = ['term', 'description', 'image'];
+// buzzfeed spreadsheet
+// const SPREADSHEET_ID = '1BQwdvEIyJHJt2xn3jH8MZ2qYhR3UrhnpTGI0-3hvX8w';
+// const FIELDS = ['term', 'description', 'image'];
+const SPREADSHEET_ID = '1e5bokjIu438y4DIaP_nrvtcrjE3zysUeRt7DHwtZlqw';
+const FIELDS = ['term', 'type', 'url', 'kind', 'explanation', 'origin', 'alias', 'relationships'];
 
 function parseRow(row) {
   // parse a GSX (Google Spreadsheet)
@@ -51,11 +54,11 @@ sheet.load(SPREADSHEET_ID, 1, rows => {
     var term = {};
     Object.keys(r).map(k => {
       var k_ = key_map[k];
-      term[k_] = r[k];
+      term[k_] = r[k].trim();
     });
     terms.push(term);
   });
-  // console.log(terms); // DEBUG
+  console.log(terms); // DEBUG
 });
 
 chrome.runtime.onMessage.addListener(

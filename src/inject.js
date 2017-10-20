@@ -53,7 +53,7 @@ chrome.extension.sendMessage({}, function(response) {
           span.textContent = match;
           span.style.backgroundColor = 'rgba(255,0,0,0.3)';
           span.dataset.h8db_term = term;
-          span.dataset.h8db_definition = obj.description;
+          span.dataset.h8db_definition = obj.explanation;
           return span;
         });
       })
