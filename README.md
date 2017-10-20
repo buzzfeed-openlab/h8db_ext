@@ -1,4 +1,4 @@
-The H8DB Chrome extension is ... a chrome extension written by Francis Tseng for the Open Lab. 
+The H8DB Chrome extension is a chrome extension written by Francis Tseng for the Open Lab. 
 
 To install, you will need to:
 * Download and unzip the [latest release](https://github.com/buzzfeed-openlab/h8db_ext/releases/latest).
