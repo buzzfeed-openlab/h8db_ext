@@ -1,9 +1,7 @@
 var terms = [];
 // buzzfeed spreadsheet
-// const SPREADSHEET_ID = '1BQwdvEIyJHJt2xn3jH8MZ2qYhR3UrhnpTGI0-3hvX8w';
-// const FIELDS = ['term', 'description', 'image'];
-const SPREADSHEET_ID = '1e5bokjIu438y4DIaP_nrvtcrjE3zysUeRt7DHwtZlqw';
-const FIELDS = ['term', 'type', 'url', 'kind', 'explanation', 'origin', 'alias', 'relationships'];
+const SPREADSHEET_ID = '1BQwdvEIyJHJt2xn3jH8MZ2qYhR3UrhnpTGI0-3hvX8w';
+const FIELDS = ['rob','term', 'explanation','image'];
 
 function parseRow(row) {
   // parse a GSX (Google Spreadsheet)
